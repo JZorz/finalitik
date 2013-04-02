@@ -1,0 +1,9 @@
+{% if zadnje_tabele %}
+    <ul>
+        {% for tab in zadnje_tabele %}
+            <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Ni tabel.</p>
+{% endif %}
