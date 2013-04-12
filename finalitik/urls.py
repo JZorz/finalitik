@@ -4,10 +4,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-<<<<<<< HEAD
-                       url(r'^tab/', include('tab.urls')),
-                       url(r'^admin/', include(admin.site.urls)),
-=======
     # Examples:
     #url(r'^$', 'finalitik.views.home', name='home'),
     #url(r'^finalitik/', include('finalitik.foo.urls')),
@@ -19,5 +15,4 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^', include('tab.urls')),
->>>>>>> e7629dc5cac9a546e20c5cb4714e1db24fff720a
 )
