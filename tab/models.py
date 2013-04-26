@@ -13,3 +13,6 @@ class Tab(models.Model):
     nedavno.admin_order_field = 'datum'
     nedavno.boolean = True
     nedavno.short_description = 'Nedavno dodano?'
+
+    def __unicode__(self):
+        return "%s %s" % (self.konto, self.znesek)
