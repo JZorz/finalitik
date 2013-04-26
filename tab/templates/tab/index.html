@@ -15,10 +15,10 @@
         <br>
 
 
-            {% for tab in zadnje_tabele %}
+        {% for tab in zadnje_tabele %}
 
-                <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
-            {% endfor %}
+            <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
+        {% endfor %}
 
     {% else %}
         <p>Ni tabel.</p>
