@@ -3,22 +3,31 @@
 <head>
     <meta charset="utf-8">
     <title>FINALITIK</title>
+
     <link rel="stylesheet" type="text/css" href="{% static 'finalitik/style/bootstrap.css' %}">
 </head>
 <body>
-
+<div id="header"><h1>FINALITIK</h1>
+</div>
+<br>
 <div class="body">
-{% if zadnje_tabele %}
+    {% if zadnje_tabele %}
+        <br>
 
-    <ul>
+
         {% for tab in zadnje_tabele %}
+
             <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
         {% endfor %}
-    </ul>
-{% else %}
-    <p>Ni tabel.</p>
-{% endif %}
-    </div>
 
+    {% else %}
+        <p>Ni tabel.</p>
+    {% endif %}
+
+</div>
 </body>
+<footer>
+    <br>
+    <div id="footer">AVTORJI:Jani Žorž, Blaž Berglez, Romana Grilj</div>
+</footer>
 </html>
