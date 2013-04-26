@@ -11,14 +11,14 @@
 <br>
 <div class="body">
     {% if zadnje_tabele %}
+        <br>
 
-        <ul>
-            <br>
+
             {% for tab in zadnje_tabele %}
 
                 <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
             {% endfor %}
-        </ul>
+
     {% else %}
         <p>Ni tabel.</p>
     {% endif %}
@@ -26,6 +26,7 @@
 </div>
 </body>
 <footer>
-    <div id="footer">Noga</div>
+    <br>
+    <div id="footer">AVTORJI:Jani Žorž, Blaž Berglez, Romana Grilj</div>
 </footer>
 </html>
