@@ -229,7 +229,8 @@ body {
 
 
 }
-#header {
+
+#header{
     float:left;
     width:100%;
     height:80px;
@@ -238,11 +239,12 @@ body {
     text-align:center;
     font-family:"Algerian";
 }
-#footer {
+footer {
     float:left;
     width:100%;
-    height:40px;
+    height:80px;
     background-color:#3366FF;
+    text-align:center;
 }
 
 a {

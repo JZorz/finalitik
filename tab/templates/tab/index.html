@@ -10,22 +10,22 @@
 </div>
 <br>
 <div class="body">
-{% if zadnje_tabele %}
+    {% if zadnje_tabele %}
 
-    <ul>
-        <br>
-        {% for tab in zadnje_tabele %}
+        <ul>
+            <br>
+            {% for tab in zadnje_tabele %}
 
-            <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>Ni tabel.</p>
-{% endif %}
+                <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Ni tabel.</p>
+    {% endif %}
 
-    </div>
+</div>
 </body>
 <footer>
-<div id="footer">Noga</div>
-    </footer>
+    <div id="footer">Noga</div>
+</footer>
 </html>
