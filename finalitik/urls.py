@@ -4,9 +4,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-
-    # Examples:
+urlpatterns = patterns(
+    '',  # Examples:
     #url(r'^$', 'finalitik.views.home', name='home'),
     #url(r'^finalitik/', include('finalitik.foo.urls')),
 

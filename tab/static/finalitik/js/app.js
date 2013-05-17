@@ -1,7 +1,7 @@
 angular.module('finalitik', ['finalServices']).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.
-            when('/', {templateUrl: '/templates/tab/index.html', controller: FinalCtrl})
-            .when('/details', {templateUrl: '/templates/tab/details.html',   controller: FinalCtrl})
+            when('/', {templateUrl: '/static/finalitik/partials/index.html', controller: FinalCtrl})
+            .when('/details', {templateUrl: '/static/finalitik/partials/details.html',   controller: FinalCtrl})
             otherwise({redirectTo: '/'});
     }]);
