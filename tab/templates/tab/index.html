@@ -1,22 +1,10 @@
 {% extends "tab/base.html" %}
 
 {% block content %}
-    <div id="header"><h1>FINALITIK</h1>
+
     </div>
     <br>
     <div class="body">
-        {% if zadnje_tabele %}
-            <br>
-
-
-            {% for tab in zadnje_tabele %}
-
-                <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li>
-            {% endfor %}
-
-        {% else %}
-            <p>Ni tabel.</p>
-        {% endif %}
-
+    <div class="text-center"><div class="nav-header">PODROČJA</div><div>
     </div>
 {% endblock %}

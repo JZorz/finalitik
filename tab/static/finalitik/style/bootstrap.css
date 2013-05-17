@@ -6121,7 +6121,7 @@ a.badge:focus {
           border-radius: 6px;
 }
 
-.hero-unit h1 {
+.hero-unit  h1{
   margin-bottom: 0;
   font-size: 60px;
   line-height: 1;

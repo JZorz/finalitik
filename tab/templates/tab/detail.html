@@ -1,7 +1,7 @@
 {% extends "tab/base.html" %}
 
 {% block content %}
-    <h1>{{ Tab.konto }}</h1>
+    <div class="text-center">{{ Tab.konto }}</div>
     <ul>
         {% for choice in Tab.choice_set.all %}
             <li>{{ choice.choice_text }}</li>

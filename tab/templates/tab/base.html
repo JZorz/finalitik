@@ -2,15 +2,31 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>FINALITIK</title>
         <link href="{% static 'finalitik/style/bootstrap.css' %}" rel="stylesheet" media="screen">
+        <div class="page-header ">
+            <div class="text-center"> <a class="h1">FINALITIK</a>
+            </div>
+        </div>
         </head>
         <body>
+        <div class="body">
         {% block content %}{% endblock %}
         <script src="{% static 'finalitik/lib/bootstrap.js' %}"></script>
+        {% if zadnje_tabele %}
+            <br>
+
+            {% for tab in zadnje_tabele %}
+
+                <div class="navbar-inner"><div class="text-center"><li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li></div></div>
+            {% endfor %}
+
+        {% else %}
+            <p>Ni tabel.</p>
+        {% endif %}
+        </div>
         </body>
         <footer>
         <br>
-        <div id="footer">AVTORJI: Jani Žorž, Blaž Berglez, Romana Grilj</div>
+        <div id="modal-footer">AVTORJI: Jani Žorž, Blaž Berglez, Romana Grilj</div>
     </footer>
 </html>
