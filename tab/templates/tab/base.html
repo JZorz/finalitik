@@ -1,32 +1,35 @@
 {% load staticfiles %}<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link href="{% static 'finalitik/style/bootstrap.css' %}" rel="stylesheet" media="screen">
-        <div class="page-header ">
-            <div class="text-center"> <a class="h1">FINALITIK</a>
-            </div>
+<html ng-app="finalitik">
+<head>
+    <meta charset="utf-8">
+    <link href="{% static 'finalitik/style/bootstrap.css' %}" rel="stylesheet" media="screen">
+    <div class="page-header ">
+        <div class="text-center"> <a class="h1"><strong><h1>FINALITIK</h1></strong></a>
         </div>
-        </head>
-        <body>
-        <div class="body">
-        {% block content %}{% endblock %}
-        <script src="{% static 'finalitik/lib/bootstrap.js' %}"></script>
-        {% if zadnje_tabele %}
-            <br>
-
-            {% for tab in zadnje_tabele %}
-
-                <div class="navbar-inner"><div class="text-center"><li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li></div></div>
-            {% endfor %}
-
-        {% else %}
-            <p>Ni tabel.</p>
-        {% endif %}
-        </div>
-        </body>
-        <footer>
+    </div>
+</head>
+<body>
+<div class="container">
+<div class="body">
+    {% block content %}{% endblock %}
+    <script src="{% static 'finalitik/lib/bootstrap.js' %}"></script>
+    {% if zadnje_tabele %}
         <br>
-        <div id="modal-footer">AVTORJI: Jani Žorž, Blaž Berglez, Romana Grilj</div>
-    </footer>
+
+        {% for tab in zadnje_tabele %}
+
+            <div class="navbar-inner"><div class="text-center">
+                <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li></div></div>
+        {% endfor %}
+
+    {% else %}
+        <div class="text-center"><p><span class="label">Ni tabel.</span></p></div>
+    {% endif %}
+</div>
+</div>
+</body>
+<footer>
+    <br>
+
+</footer>
 </html>

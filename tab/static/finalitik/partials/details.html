@@ -1,0 +1,11 @@
+{% extends "tab/base.html" %}
+
+{% block content %}
+    {{ Tab.konto }}
+    <ul>
+        {% for choice in Tab.choice_set.all %}
+            <li>{{ choice.choice_text }}</li>
+        {% endfor %}
+    </ul>
+    <p>ZNESEK: {{ Tab.znesek }}€</p>
+{% endblock %}
