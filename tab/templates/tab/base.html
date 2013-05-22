@@ -19,11 +19,11 @@
         {% for tab in zadnje_tabele %}
 
             <div class="navbar-inner"><div class="text-center">
-                <li><a href="{% url 'detail' tab.id %}">{{ tab.konto }}</a></li></div></div>
+                <li><a href="{% url 'detail' tab.id %}">{{ tab.groupname }}</a></li></div></div>
         {% endfor %}
 
     {% else %}
-        <div class="text-center"><p><span class="label">Ni tabel.</span></p></div>
+        <div class="text-center"><p><span class="label">Poišči tabele v csv in ustvari vizualizacijo.</span></p></div>
     {% endif %}
 </div>
 </div>

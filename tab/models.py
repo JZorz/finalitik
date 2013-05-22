@@ -1,11 +1,12 @@
-from datetime import timedelta, datetime
+from datetime import timedelta
 from django.db import models
 from django.utils import timezone
 
 
 class Tab(models.Model):
-    konto = models.CharField(max_length=200)
-    znesek = models.IntegerField(default=0)
+    konto = models.CharField(max_length=256)
+    groupname = models.CharField(max_length=256)
+    znesek = models.FloatField(default=0.0)
     datum = models.DateTimeField('datum')
 
     def nedavno(self):
@@ -15,4 +16,4 @@ class Tab(models.Model):
     nedavno.short_description = 'Nedavno dodano?'
 
     def __unicode__(self):
-        return "%s %s" % (self.konto, self.znesek)
+        return "%s %s %s" % (self.konto, self.groupname, self.znesek)
