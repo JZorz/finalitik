@@ -1,9 +1,10 @@
 # Full path and name to your csv file
-filepath="C:\\Users\\SkyKnight\\finalitik\\SP2014_SPL.csv"
+filepath = "C:\\Users\\SkyKnight\\finalitik\\SP2014_SPL.csv"
 # Full path to your django project directory
-djprohome="C:\\Users\\SkyKnight\\finalitik\\finalitik\\"
+djprohome = "C:\\Users\\SkyKnight\\finalitik\\finalitik\\"
 
-import sys,os
+import sys
+import os
 sys.path.append(djprohome)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 

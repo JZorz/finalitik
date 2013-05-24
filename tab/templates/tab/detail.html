@@ -1,16 +1,55 @@
 {% extends "tab/base.html" %}
 
 {% block content %}
-    <div class="text-center"><h3 class="text-info">{{ Tab.konto }}</h3>
+    <div class="text-center"><div id="naslov"></div>
         <br>
         <br>
         <br>
         <div class="row">
-            <div class="span4 offset4 well">
+
     <ul>
-        {% for choice in Tab.choice_set.all %}
-           <li>{{ choice.choice_text }}</li><
-        {% endfor %}
+        {% if group %}
+            <br>
+
+            {% for tab in group %}
+
+                <div class="navbar-inner"><div class="text-left">
+                    <li style="list-style-type:none;"><p>{{ forloop.counter }}.  {{ tab.konto }}</p>
+                    <p>ZNESEK:  {{ tab.znesek }}€</p></li></div></div>
+            {% endfor %}
+            <div class="navbar-inner">
+            <div id="graph" align="center">Loading graph...</div>
+
+            <script type="text/javascript">
+
+                var myData= new Array();
+                {% for tab in group %}
+                    var ime = "{{ forloop.counter }}";
+                    var zn = {{ tab.znesek }};
+                    myData.push([ime,zn]);
+                    ime ="{{ tab.groupname }}"
+                {% endfor %}
+
+                var myChart = new JSChart('graph', 'bar');
+                myChart.setDataArray(myData);
+                myChart.setBarColor('#42aBdB');
+                myChart.setBarOpacity(0.8);
+                myChart.setBarBorderColor('#D9EDF7');
+                myChart.setBarValues(true);
+                myChart.setTitleColor('#8C8383');
+                myChart.setTitle(ime);
+                myChart.setAxisColor('#777E81');
+                myChart.setAxisValuesColor('#777E81');
+                myChart.setAxisNameX('');
+                myChart.setAxisNameY('');
+                myChart.setSize(900, 300);
+                myChart.draw();
+                document.getElementById("naslov").innerHTML = "<h3 class='text-info'>" + ime + "</h3>";
+            </script>
+            </div>
+        {% else %}
+            <div class="text-center"><p><span class="label">Ni podatkov</span></p></div>
+        {% endif %}
     </ul>
-    <p>ZNESEK: {{ Tab.znesek }}€</p></div></div></div></div>
+    </div></div></div>
 {% endblock %}

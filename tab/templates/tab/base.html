@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link href="{% static 'finalitik/style/bootstrap.css' %}" rel="stylesheet" media="screen">
+    <script src="{% static 'finalitik/lib/jscharts.js' %}"></script>
     <div class="page-header ">
         <div class="text-center"> <a class="h1"><strong><h1>FINALITIK</h1></strong></a>
         </div>
@@ -21,9 +22,6 @@
             <div class="navbar-inner"><div class="text-center">
                 <li><a href="{% url 'detail' tab.id %}">{{ tab.groupname }}</a></li></div></div>
         {% endfor %}
-
-    {% else %}
-        <div class="text-center"><p><span class="label">Poišči tabele v csv in ustvari vizualizacijo.</span></p></div>
     {% endif %}
 </div>
 </div>
